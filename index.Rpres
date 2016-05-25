@@ -1,0 +1,43 @@
+Let Us Perform Some Arithmetic Calculations
+========================================================
+author: W Wocher
+date: `r date()`
+
+So You Do Not Like Doing Math
+========================================================
+
+Here is the tool that will solve all your problems.
+
+- It Displays 2 Values
+- It Adds 2 Values
+- It Subtracts 2 Values
+- It Multiplies 2 Values
+
+How To Run The Application
+========================================================
+You can find the Application at this URL : https://wocherw.shinyapps.io/dataproducts/
+
+There is also a nice file to read here : https://github.com/wocherw/dataproducts/blob/master/Shiny_Math.pdf
+
+You can also find the complete code here : https://github.com/wocherw/dataproducts
+
+
+Fun Things with Presentations
+========================================================
+Here is some information about cars.  Who doesn't like cars?!
+
+```{r}
+summary(cars)
+```
+
+Comparison of Automatic and Manual Transmissions
+========================================================
+
+```{r, echo=FALSE}
+library("ggplot2")
+mtcars.mpg.am <- mtcars[, c(1,9)]
+mtcars.mpg.am$am.type <- gsub("0","Automatic", mtcars.mpg.am$am)
+mtcars.mpg.am$am.type <- gsub("1","Manual", mtcars.mpg.am$am.type)
+g <- ggplot(data=mtcars.mpg.am, aes(x=am.type, y=mpg)); g <- g + geom_boxplot(aes(fill=am.type)); g <- g + ylab("Miles Per Gallon") + xlab("Transmission")  +  ggtitle("MPG per Transmission Type")
+g
+```
